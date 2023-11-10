@@ -1,0 +1,23 @@
+syntax = "proto3";
+package lumber.Message;
+import "proto/Enum/AxeQuality.proto";
+
+// 砍树
+message DoLumberRequest {
+  Enum.EAxeQuality quality = 1;
+}
+
+// 砍树返回状态
+enum ELumberStatus{
+  Success = 0; //成功掉落午评
+  TreeLevelNotEnough = 1; // 仙果砍飞了(树等级太低)
+  AxeLevelNotEnough = 2; //斧头断了(斧头等级太低)
+  NoRewardInLoot = 3; //奖池中奖励不够
+}
+
+message DoLumberResponse {
+  ELumberStatus status = 1; //砍树返回状态
+  uint32 roseCost = 2; //消耗的玫瑰数
+  uint32 coinGain = 3; //获得金币数
+  uint32 propId = 4; //掉落物品id, 0表示未掉落
+}

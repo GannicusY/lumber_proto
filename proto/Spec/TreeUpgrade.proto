@@ -1,0 +1,12 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message TreeUpgrade {
+  int32 Tree_Level = 1;// 仙树等级
+  int32 Water_Count = 2;// 浇灌次数
+  int32 Water_Use = 3;// 浇灌金币消耗
+  int32 Upgrade_Use = 4;// 升级金币消耗
+  int32 Success_Prob = 5;// 升级成功率
+  int32 Add_Prob = 6;// 失败增加几率
+  int32 Must_Fail = 7;// 必定失败次数
+}

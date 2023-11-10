@@ -1,0 +1,13 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message Goods {
+  int32 Goods_ID = 1;// 商品ID
+  int32 Goods_Type = 2;// 商品分类
+  string Goods_Name = 3;// 商品名称
+  int32 Pay_Prop = 4;// 支付道具
+  int32 Price = 5;// 价格
+  repeated int32 Include_goods = 6;// 包含道具
+  repeated int32 Goods_Num = 7;// 道具数量
+  string Goods_Icon = 8;// 商品Icon
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+package lumber.Enum;
+
+// 斧子品质
+enum EAxeQuality{
+  Iron = 0; // 铁斧子
+  Silver = 1; // 银斧子
+  Golden = 2; // 金斧子
+}

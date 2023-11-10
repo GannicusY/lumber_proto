@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "fs": "^0.0.1-security",
+    "google-protobuf": "^3.21.2",
+    "path": "^0.12.7",
+    "protobufjs": "^7.2.5",
+    "protobufjs-cli": "^1.1.2",
+    "xlsx": "^0.18.5"
+  }
+}

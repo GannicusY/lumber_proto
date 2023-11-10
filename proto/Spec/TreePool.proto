@@ -1,0 +1,7 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message TreePool {
+  int32 Tree_Level = 1;// 仙树等级
+  int32 Pool_ID = 2;// 奖励池ID
+}

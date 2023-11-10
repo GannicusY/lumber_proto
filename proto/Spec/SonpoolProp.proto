@@ -1,0 +1,9 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message SonpoolProp {
+  int32 Sonpool_ID = 1;// 品质池ID
+  int32 Prop_ID = 2;// 道具ID
+  int32 Prop_Name = 3;// 道具名称
+  int32 Prob = 4;// 概率
+}

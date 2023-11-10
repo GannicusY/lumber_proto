@@ -1,0 +1,13 @@
+syntax = "proto3";
+package lumber.Message;
+import "proto/DataTable/UserTree.proto";
+
+// 浇灌仙树
+message TreeWateringRequest {
+
+}
+
+message TreeWateringResponse {
+  DataTable.UserTree tree = 1;
+  int32 costCoin = 2;
+}

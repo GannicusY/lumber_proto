@@ -1,0 +1,17 @@
+syntax = "proto3";
+package lumber.Message;
+
+import "proto/DataTable/UserAxe.proto";
+import "proto/DataTable/UserTree.proto";
+
+// 获取玩家基础数据
+message GetUserInfoRequest {
+
+}
+
+message GetUserInfoResponse {
+  DataTable.UserTree tree = 1;
+  repeated DataTable.UserAxe axe = 2;
+  uint32 coin = 3;
+  uint32 rose = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message Fruit {
+  int32 Pool_ID = 1;// 仙果ID
+  int32 Prop_ID = 2;// 包含道具ID
+  repeated int32 Prop_Range = 3;// 道具数量区间
+}

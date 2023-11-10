@@ -1,0 +1,12 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message AxeUpgrade {
+  int32 Axe_Level = 1;// 斧子等级
+  int32 Burnish_Count = 2;// 打磨次数
+  int32 Burnish_Use = 3;// 打磨金币消耗
+  int32 Upgrade_Use = 4;// 升级金币消耗
+  int32 Success_Prob = 5;// 升级成功率
+  int32 Add_Prob = 6;// 失败增加几率
+  int32 Must_Fail = 7;// 必定失败次数
+}

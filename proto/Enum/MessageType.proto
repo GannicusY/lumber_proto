@@ -1,0 +1,13 @@
+syntax = "proto3";
+package lumber.Enum;
+
+// 消息类型(通信消息枚举)
+enum EMessageType {
+  GetUserInfo = 0; // 获取用户信息
+  TreeWatering = 1; // 树浇灌
+  TreeUpgrade = 2; // 树升级
+  AxeBurnish = 3; // 斧子打磨
+  AxeUpgrade = 4; // 斧子升级
+  DoLumber = 5; //砍树
+  GetRewardRecord = 6; // 砍树获奖历史记录
+}

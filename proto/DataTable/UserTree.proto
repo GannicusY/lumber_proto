@@ -1,0 +1,9 @@
+syntax = "proto3";
+package lumber.DataTable;
+
+// 玩家仙树数据
+message UserTree {
+  int32 level = 1; //等级
+  int32 water = 2; //浇灌次数
+  int32 fail = 3; //失败次数
+}

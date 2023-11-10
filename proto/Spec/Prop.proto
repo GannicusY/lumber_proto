@@ -1,0 +1,16 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message Prop {
+  int32 Prop_ID = 1;// 道具ID
+  string Prop_Name = 2;// 中文名称
+  int32 Prop_Type = 3;// 道具类型
+  int32 Prop_Rare = 4;// 道具品质
+  string Prop_Desc = 5;// 道具描述
+  int32 IsStack = 6;// 是否可堆叠
+  int32 StackLimit = 7;// 堆叠上限
+  int32 Prop_Price = 8;// 价格
+  int32 Debris_Comp = 9;// 碎片合成数量
+  int32 Compose_ID = 10;// 合成道具ID
+  string Prop_Url = 11;// Icon图标
+}

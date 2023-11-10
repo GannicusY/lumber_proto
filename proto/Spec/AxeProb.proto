@@ -1,0 +1,9 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message AxeProb {
+  int32 Axe_Level = 1;// 斧子等级
+  int32 Axe_Type = 2;// 斧子品质
+  repeated int32 Axe_Prob = 3;// 概率
+  repeated int32 Prop_Ids = 4;// 道具列表
+}

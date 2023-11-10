@@ -1,0 +1,12 @@
+syntax = "proto3";
+package lumber.DataTable;
+
+import "proto/Enum/AxeQuality.proto";
+
+// 玩家斧头数据
+message UserAxe {
+  Enum.EAxeQuality quality = 1; // 斧头品质
+  int32 level = 2; //等级
+  int32 burnish = 3; //打磨次数
+  int32 fail = 4; //失败次数
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package lumber.Message;
+import "proto/Enum/AxeQuality.proto";
+import "proto/DataTable/UserAxe.proto";
+
+// 斧子升级
+message AxeUpgradeRequest {
+  Enum.EAxeQuality quality = 1;
+}
+
+message AxeBurnishResponse {
+  DataTable.UserAxe axe = 1;
+  int32 costCoin = 2;
+}

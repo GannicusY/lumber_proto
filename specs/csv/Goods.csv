@@ -1,0 +1,14 @@
+商品ID,商品分类,商品名称,支付道具,价格,包含道具,道具数量,商品Icon
+Goods_ID,Goods_Type,Goods_Name,Pay_Prop,Price,Include_goods,Goods_Num,Goods_Icon
+int,int,string,int,int,ints,ints,string
+1,1,铁斧子商品1,105,999,102,10,SmallAxe
+2,1,铁斧子商品2,105,10,102,50,SmallAxe
+3,1,铁斧子商品3,105,10,"[102,101]","[10,10000]",SmallAxe
+4,1,铁斧子商品4,105,999,"[102,101]","[50,10000]",SmallAxe
+5,2,银斧子商品1,105,10,103,10,RunicAxe
+6,2,银斧子商品2,105,999,103,50,RunicAxe
+7,2,银斧子商品3,105,10,"[103,101]","[10,10000]",RunicAxe
+8,2,银斧子商品4,105,999,"[103,101]","[50,10000]",RunicAxe
+9,3,金斧子商品1,105,10,104,10,DreadCleaver
+10,3,金斧子商品2,105,999,104,50,DreadCleaver
+11,3,金斧子商品3,105,10,"[104,101]","[10,10000]",DreadCleaver

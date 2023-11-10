@@ -1,0 +1,28 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message Config {
+  int32 Id = 1;// 字段ID
+  string Format = 2;// 字段类型
+  eConfigKey Key = 3;// 字段名称
+  string Value = 4;// 字段值
+  string Desc = 5;// 描述
+}
+
+// 字段名称
+enum eConfigKey {
+  Default = 0; // 默认值
+  Bacepool_On = 1;
+  Bacepool_Off = 2;
+  Middlepoor_Limit = 3;
+  Seniorpoor_Limit = 4;
+  Proportion = 5;
+  Brokerage = 6;
+  Initial_Gold = 7;
+  Coin_Iron_Axe = 8;
+  Coin_Silver_Axe = 9;
+  Coin_Gold_Axe = 10;
+  Cost_Iron_Axe = 11;
+  Cost_Silver_Axe = 12;
+  Cost_Gold_Axe = 13;
+}

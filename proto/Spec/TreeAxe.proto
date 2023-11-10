@@ -1,0 +1,11 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message TreeAxe {
+  int32 id = 1;// ID
+  repeated int32 TreeAxe_Level_Gap = 2;// 树减斧等级区间
+  int32 TreeAxe_Prob = 3;// 触发概率
+  int32 TreeAxe_Mini = 4;// 砍伐次数必触发
+  int32 TreeAxe_Gold = 5;// 掉落金币
+  int32 TreeAxe_Max = 6;// 当前等级最大次数
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package lumber.Spec;
+
+message Sonpool {
+  int32 Pool_ID = 1;// 奖励池ID
+  int32 Sonpool1_ID = 2;// 品质1池ID
+  int32 Sonpool2_ID = 3;// 品质2池ID
+  int32 Sonpool3_ID = 4;// 品质3池ID
+  int32 Sonpool4_ID = 5;// 品质4池ID
+  int32 Sonpool5_ID = 6;// 品质5池ID
+  int32 Sonpool6_ID = 7;// 品质6池ID
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package lumber.Message;
+import "proto/DataTable/UserTree.proto";
+
+// 升级仙树
+message TreeUpgradeRequest {
+
+}
+
+message TreeWateringResponse {
+  bool success = 1; // 升级成功或失败
+  int32 costCoin = 2; // 消耗的金币
+  DataTable.UserTree userTree = 3; // 仙树数据,升级成功仙树等级+1
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package lumber.Enum;
+
+// 返回错误码
+enum EErrorCode {
+  UnKnown = 0; //未知错误
+  InternalServerError = 1; //服务器内部错误
+  DiamondNotEnough = 100; //玫瑰不足
+  UserNotOnline = 108; // 玩家不在线
+  TreeWateringMax = 148; //仙树灌溉已满,不能再灌溉,可直接升级
+  CoinNotEnough = 150; //金币不足
+  NeedMoreWatering = 151; //未浇灌到可升级状态
+  TreeLevelMax = 152; // 仙树已经满级
+}
