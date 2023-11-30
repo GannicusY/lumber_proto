@@ -6,7 +6,7 @@ message Config {
   string Format = 2;// 字段类型#client
   EConfigKey Key = 3;// 字段名称
   string Value = 4;// 字段值
-  string Desc = 5;// 描述
+  string Desc = 5;// 描述#desc
 }
 
 // 字段名称
