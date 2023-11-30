@@ -1,0 +1,2 @@
+MD5 (./specs/excel/GameConfig.xlsx) = 28810b84ec8547ed7fb6b1671a3d07d2
+MD5 (./specs/excel/GameSpec.xlsx) = e28bcfed3cc2c61a605db204d3a89892

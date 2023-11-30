@@ -1,0 +1,25 @@
+#!/bin/sh
+
+cd "$(dirname "$0")/../.." || exit 1
+
+excel_dir=./specs/excel
+if [ ! -d ${excel_dir} ]; then
+  echo "dir ${excel_dir} not exist yet!"
+  exit 0
+fi
+
+excel_md5_file=./scripts/hooks/excel_md5.txt
+if [ ! -f ${excel_md5_file} ]; then
+  touch ${excel_md5_file}
+fi
+
+cur_md5=$(find ${excel_dir} -type f -exec md5 {} \;)
+last_md5=$(cat ${excel_md5_file})
+
+if [ "${cur_md5}" != "${last_md5}" ]; then
+  echo "${cur_md5}" > ${excel_md5_file}
+  sh ./scripts/generate.sh
+  git add .
+fi
+
+exit 0

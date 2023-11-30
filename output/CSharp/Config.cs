@@ -138,7 +138,7 @@ namespace Lumber.Spec {
     public const int FormatFieldNumber = 2;
     private string format_ = "";
     /// <summary>
-    /// 字段类型
+    /// 字段类型#client
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

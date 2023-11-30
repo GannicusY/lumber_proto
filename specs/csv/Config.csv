@@ -1,4 +1,4 @@
-字段ID,字段类型,字段名称,字段值,描述
+字段ID,字段类型#client,字段名称,字段值,描述
 Id,Format,Key,Value,Desc
 int,string,EConfigKey,string,string
 1,int,Bacepool_On,15000,基础池放水金额

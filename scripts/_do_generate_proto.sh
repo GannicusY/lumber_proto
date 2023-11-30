@@ -10,7 +10,7 @@ script_dir=$(dirname "$script_path")
 cd "${script_dir}/.." || exit 1
 
 protoc="./libs/protobuf/bin/protoc"
-proto_js="pbjs"
+proto_js="./node_modules/.bin/pbjs"
 proto_dir="./proto"  # 指定存放.proto文件的目录
 csharp_output_dir="./output/CSharp"  # csharp指定输出目录
 js_output_dir="./output/JS" # js指定输出目录
