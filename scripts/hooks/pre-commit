@@ -23,7 +23,7 @@ if [ "${cur_md5}" != "${last_md5}" ]; then
   sh ./scripts/generate.sh
   git add .
   curl -X POST -H "Content-Type: application/json;charset=utf-8" \
-      -d '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":true}, "elements":[{"tag":"div", "text":{"content":"配置表下载地址:https://gitlab.17zhuyu.com/zhengyong/lumber_proto/tree/master/specs/output", "tag":"lark_md"}}], "header":{"title":{"content":"配置表已更新", "tag":"plain_text"}, "template":"turquoise"}}}' \
+      -d '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":true}, "elements":[{"tag":"div", "text":{"content":"仓库地址:\nhttps://gitlab.17zhuyu.com/zhengyong/lumber_proto\n", "tag":"lark_md"}},{"actions":[{"tag":"button","text":{"content":"服务器配表下载","tag":"lark_md"},"url":"https://gitlab.17zhuyu.com/zhengyong/lumber_proto/blob/master/specs/output/qqs_server/%E7%A0%8D%E6%A0%91.xlsx","type":"default","value":{}}],"tag":"action"}], "header":{"title":{"content":"配置表已更新", "tag":"plain_text"}, "template":"turquoise"}}}' \
       ${fs_alert_url}
 fi
 
