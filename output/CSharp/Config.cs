@@ -183,7 +183,7 @@ namespace Lumber.Spec {
     public const int DescFieldNumber = 5;
     private string desc_ = "";
     /// <summary>
-    /// 描述
+    /// 描述#desc
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
