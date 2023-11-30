@@ -1,5 +1,7 @@
 #!/bin/sh
 
+fs_alert_url='https://open.feishu.cn/open-apis/bot/v2/hook/fae1ba9c-36ed-4f84-b413-abba02c3b31f'
+
 cd "$(dirname "$0")/../.." || exit 1
 
 excel_dir=./specs/excel
@@ -19,6 +21,10 @@ last_md5=$(cat ${excel_md5_file})
 if [ "${cur_md5}" != "${last_md5}" ]; then
   echo "${cur_md5}" > ${excel_md5_file}
   sh ./scripts/generate.sh
+  git add .
+  curl -X POST -H "Content-Type: application/json;charset=utf-8" \
+      -d '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":true}, "elements":[{"tag":"div", "text":{"content":"配置表下载地址:https://gitlab.17zhuyu.com/zhengyong/lumber_proto/tree/master/specs/output", "tag":"lark_md"}}], "header":{"title":{"content":"配置表已更新", "tag":"plain_text"}, "template":"turquoise"}}}' \
+      ${fs_alert_url}
 fi
 
 exit 0
