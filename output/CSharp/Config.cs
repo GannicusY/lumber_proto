@@ -138,7 +138,7 @@ namespace Lumber.Spec {
     public const int FormatFieldNumber = 2;
     private string format_ = "";
     /// <summary>
-    /// 字段类型#client
+    /// 字段类型
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -183,7 +183,7 @@ namespace Lumber.Spec {
     public const int DescFieldNumber = 5;
     private string desc_ = "";
     /// <summary>
-    /// 描述#desc
+    /// 描述
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
