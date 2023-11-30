@@ -3,7 +3,7 @@ package lumber.Spec;
 
 message Config {
   int32 Id = 1;// 字段ID
-  string Format = 2;// 字段类型
+  string Format = 2;// 字段类型#client
   EConfigKey Key = 3;// 字段名称
   string Value = 4;// 字段值
   string Desc = 5;// 描述
