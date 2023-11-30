@@ -19,7 +19,6 @@ last_md5=$(cat ${excel_md5_file})
 if [ "${cur_md5}" != "${last_md5}" ]; then
   echo "${cur_md5}" > ${excel_md5_file}
   sh ./scripts/generate.sh
-  git add .
 fi
 
 exit 0
