@@ -44,7 +44,7 @@ fs.readdir(csvPath, (err, files) => {
     const filteredFiles = files.filter(file => path.extname(file) === fileFormat);
 
     // 打印筛选后的文件列表
-    console.log('Filtered files:', filteredFiles);
+    // console.log('Filtered files:', filteredFiles);
 
     for (const csvFile in filteredFiles) {
         Csv2Proto(csvPath, filteredFiles[csvFile]).then()
@@ -90,8 +90,8 @@ function readFieldSchema(fullCsvFile)
 
 function readTableRow(fullCsvFile, enumKeyRaw)
 {
-    console.log(fullCsvFile);
-    console.log(enumKeyRaw);
+    // console.log(fullCsvFile);
+    // console.log(enumKeyRaw);
     return new Promise((resolve, reject) => {
         let rowContent = new Set();
 
@@ -119,8 +119,8 @@ async function Csv2Proto(csvPath, csvFileName) {
     try {
         let fieldDesc = await readDescHeader(fullCsvFile);
         let fieldSchema = await readFieldSchema(fullCsvFile);
-        console.log(fieldDesc);
-        console.log(fieldSchema);
+        // console.log(fieldDesc);
+        // console.log(fieldSchema);
         const tableName = path.basename(csvFileName, path.extname(csvFileName));
         CreateSpecProtoFile(tableName, fieldSchema, fieldDesc);
     } catch (error) {
@@ -133,7 +133,7 @@ function CreateSpecProtoFile(tableName, fieldSchema, fieldDesc)
     if(tableName.startsWith('{') || tableName.startsWith('['))
     {
         tableName = tableName.substring(1, tableName.length - 1);
-        console.log(tableName)
+        // console.log(tableName)
     }
 
     const protoFileName = tableName + ".proto";
@@ -149,7 +149,7 @@ function CreateSpecProtoFile(tableName, fieldSchema, fieldDesc)
             if(specDataType.startsWith('e'))
             {
                 CreateEnumContent(tableName, specDataTypeRaw, fieldDesc[keyIndex]).then(enumContent => {
-                    console.log("enumContent:" + enumContent);
+                    // console.log("enumContent:" + enumContent);
 
                     fs.appendFileSync(protoFullPath, enumContent, 'utf-8');
                 });
@@ -182,7 +182,7 @@ async function CreateEnumContent(tableName, specDataTypeRaw, fieldDesc)
 {
     let csvFullPath = path.join(csvPath, `${tableName}.csv`);
     let enumValues = await readTableRow(csvFullPath, specDataTypeRaw);
-    console.log(enumValues);
+    // console.log(enumValues);
     let enumIndex = 0;
     let allEnumContent = "  Default = 0; // 默认值";
     for (const enumItem of enumValues) {

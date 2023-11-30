@@ -9,9 +9,14 @@ console.log(rootDir);
 
 // 文件夹路径
 const excelPath = path.join(rootDir, "specs", "excel");
+if (!fs.existsSync(excelPath)) {
+    console.log(`excel path ${excelPath} not exist~`);
+    process.exit(1)
+}
 const csvPath = path.join(rootDir, "specs", "csv");
+makeDirIfNotExist(csvPath)
 
-console.log(excelPath);
+// console.log(excelPath);
 
 // 指定的文件格式
 const fileFormat = '.xlsx';
@@ -45,13 +50,20 @@ function ReadWriteExcel(excelPath, excelFileName) {
             blankrows:false,
             rawNumbers:true
         });
-        console.log(csvData)
+        // console.log(csvData)
 
         // 将数据保存为CSV文件
         const fullCsvFile = path.join(csvPath, `${sheetName}.csv`);
         const fs = require('fs');
         fs.writeFileSync(fullCsvFile, csvData, 'utf-8');
         console.log(`write excel:${fullExcelFile} sheet:${sheetName} to CSV file:${fullCsvFile} done!`);
+    }
+}
+
+function makeDirIfNotExist(dirPath) {
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, {recursive:true});
+        console.log(`Directory ${dirPath} created successfully!`);
     }
 }
 

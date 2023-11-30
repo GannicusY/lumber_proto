@@ -31,3 +31,8 @@
     - excel # 用于生成csv,proto的xlsx文件
     - raw # 所有excel文件, 只用于存档
 ```
+
+### excel配表规则
+- [规则](https://mpezp7nr38.feishu.cn/file/TJWjbndWOoSHz3xyAmjc579cngb)
+- [参考案例](https://mpezp7nr38.feishu.cn/file/NjB6bvQm6ovfmMxN5JJcSOvBnnb)
+

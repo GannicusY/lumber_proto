@@ -4,13 +4,13 @@ package lumber.Spec;
 message Config {
   int32 Id = 1;// 字段ID
   string Format = 2;// 字段类型
-  eConfigKey Key = 3;// 字段名称
+  EConfigKey Key = 3;// 字段名称
   string Value = 4;// 字段值
   string Desc = 5;// 描述
 }
 
 // 字段名称
-enum eConfigKey {
+enum EConfigKey {
   Default = 0; // 默认值
   Bacepool_On = 1;
   Bacepool_Off = 2;

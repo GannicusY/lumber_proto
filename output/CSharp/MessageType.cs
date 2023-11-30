@@ -24,10 +24,11 @@ namespace Lumber.Enum {
     static MessageTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chxwcm90by9FbnVtL01lc3NhZ2VUeXBlLnByb3RvEgtsdW1iZXIuRW51bSpw",
-            "CgxFTWVzc2FnZVR5cGUSDwoLR2V0VXNlckluZm8QABIQCgxUcmVlV2F0ZXJp",
-            "bmcQARIPCgtUcmVlVXBncmFkZRACEg4KCkF4ZUJ1cm5pc2gQAxIOCgpBeGVV",
-            "cGdyYWRlEAQSDAoIRG9MdW1iZXIQBWIGcHJvdG8z"));
+            "Chxwcm90by9FbnVtL01lc3NhZ2VUeXBlLnByb3RvEgtsdW1iZXIuRW51bSqF",
+            "AQoMRU1lc3NhZ2VUeXBlEg8KC0dldFVzZXJJbmZvEAASEAoMVHJlZVdhdGVy",
+            "aW5nEAESDwoLVHJlZVVwZ3JhZGUQAhIOCgpBeGVCdXJuaXNoEAMSDgoKQXhl",
+            "VXBncmFkZRAEEgwKCERvTHVtYmVyEAUSEwoPR2V0UmV3YXJkUmVjb3JkEAZi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Lumber.Enum.EMessageType), }, null, null));
@@ -64,6 +65,10 @@ namespace Lumber.Enum {
     ///砍树
     /// </summary>
     [pbr::OriginalName("DoLumber")] DoLumber = 5,
+    /// <summary>
+    /// 砍树获奖历史记录
+    /// </summary>
+    [pbr::OriginalName("GetRewardRecord")] GetRewardRecord = 6,
   }
 
   #endregion

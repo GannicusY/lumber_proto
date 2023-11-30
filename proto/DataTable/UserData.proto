@@ -1,0 +1,12 @@
+syntax = "proto3";
+package lumber.DataTable;
+import "proto/DataTable/UserAxe.proto";
+import "proto/DataTable/UserTree.proto";
+
+// 玩家数据
+message UserData {
+  DataTable.UserTree tree = 1; // 仙树数据
+  repeated DataTable.UserAxe axes = 2; //斧子数据
+  int32 coin = 3; // 金币
+  int32 rose = 4; // 玫瑰
+}

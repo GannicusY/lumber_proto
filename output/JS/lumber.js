@@ -324,6 +324,306 @@ $root.lumber = (function() {
             return UserAxe;
         })();
 
+        DataTable.UserData = (function() {
+
+            /**
+             * Properties of a UserData.
+             * @memberof lumber.DataTable
+             * @interface IUserData
+             * @property {lumber.DataTable.IUserTree|null} [tree] UserData tree
+             * @property {Array.<lumber.DataTable.IUserAxe>|null} [axes] UserData axes
+             * @property {number|null} [coin] UserData coin
+             * @property {number|null} [rose] UserData rose
+             */
+
+            /**
+             * Constructs a new UserData.
+             * @memberof lumber.DataTable
+             * @classdesc Represents a UserData.
+             * @implements IUserData
+             * @constructor
+             * @param {lumber.DataTable.IUserData=} [properties] Properties to set
+             */
+            function UserData(properties) {
+                this.axes = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * UserData tree.
+             * @member {lumber.DataTable.IUserTree|null|undefined} tree
+             * @memberof lumber.DataTable.UserData
+             * @instance
+             */
+            UserData.prototype.tree = null;
+
+            /**
+             * UserData axes.
+             * @member {Array.<lumber.DataTable.IUserAxe>} axes
+             * @memberof lumber.DataTable.UserData
+             * @instance
+             */
+            UserData.prototype.axes = $util.emptyArray;
+
+            /**
+             * UserData coin.
+             * @member {number} coin
+             * @memberof lumber.DataTable.UserData
+             * @instance
+             */
+            UserData.prototype.coin = 0;
+
+            /**
+             * UserData rose.
+             * @member {number} rose
+             * @memberof lumber.DataTable.UserData
+             * @instance
+             */
+            UserData.prototype.rose = 0;
+
+            /**
+             * Creates a new UserData instance using the specified properties.
+             * @function create
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {lumber.DataTable.IUserData=} [properties] Properties to set
+             * @returns {lumber.DataTable.UserData} UserData instance
+             */
+            UserData.create = function create(properties) {
+                return new UserData(properties);
+            };
+
+            /**
+             * Encodes the specified UserData message. Does not implicitly {@link lumber.DataTable.UserData.verify|verify} messages.
+             * @function encode
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {lumber.DataTable.IUserData} message UserData message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            UserData.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.tree != null && Object.hasOwnProperty.call(message, "tree"))
+                    $root.lumber.DataTable.UserTree.encode(message.tree, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.axes != null && message.axes.length)
+                    for (var i = 0; i < message.axes.length; ++i)
+                        $root.lumber.DataTable.UserAxe.encode(message.axes[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.coin != null && Object.hasOwnProperty.call(message, "coin"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.coin);
+                if (message.rose != null && Object.hasOwnProperty.call(message, "rose"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.rose);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified UserData message, length delimited. Does not implicitly {@link lumber.DataTable.UserData.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {lumber.DataTable.IUserData} message UserData message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            UserData.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a UserData message from the specified reader or buffer.
+             * @function decode
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {lumber.DataTable.UserData} UserData
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            UserData.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.lumber.DataTable.UserData();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.tree = $root.lumber.DataTable.UserTree.decode(reader, reader.uint32());
+                            break;
+                        }
+                    case 2: {
+                            if (!(message.axes && message.axes.length))
+                                message.axes = [];
+                            message.axes.push($root.lumber.DataTable.UserAxe.decode(reader, reader.uint32()));
+                            break;
+                        }
+                    case 3: {
+                            message.coin = reader.int32();
+                            break;
+                        }
+                    case 4: {
+                            message.rose = reader.int32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a UserData message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {lumber.DataTable.UserData} UserData
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            UserData.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a UserData message.
+             * @function verify
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            UserData.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.tree != null && message.hasOwnProperty("tree")) {
+                    var error = $root.lumber.DataTable.UserTree.verify(message.tree);
+                    if (error)
+                        return "tree." + error;
+                }
+                if (message.axes != null && message.hasOwnProperty("axes")) {
+                    if (!Array.isArray(message.axes))
+                        return "axes: array expected";
+                    for (var i = 0; i < message.axes.length; ++i) {
+                        var error = $root.lumber.DataTable.UserAxe.verify(message.axes[i]);
+                        if (error)
+                            return "axes." + error;
+                    }
+                }
+                if (message.coin != null && message.hasOwnProperty("coin"))
+                    if (!$util.isInteger(message.coin))
+                        return "coin: integer expected";
+                if (message.rose != null && message.hasOwnProperty("rose"))
+                    if (!$util.isInteger(message.rose))
+                        return "rose: integer expected";
+                return null;
+            };
+
+            /**
+             * Creates a UserData message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {lumber.DataTable.UserData} UserData
+             */
+            UserData.fromObject = function fromObject(object) {
+                if (object instanceof $root.lumber.DataTable.UserData)
+                    return object;
+                var message = new $root.lumber.DataTable.UserData();
+                if (object.tree != null) {
+                    if (typeof object.tree !== "object")
+                        throw TypeError(".lumber.DataTable.UserData.tree: object expected");
+                    message.tree = $root.lumber.DataTable.UserTree.fromObject(object.tree);
+                }
+                if (object.axes) {
+                    if (!Array.isArray(object.axes))
+                        throw TypeError(".lumber.DataTable.UserData.axes: array expected");
+                    message.axes = [];
+                    for (var i = 0; i < object.axes.length; ++i) {
+                        if (typeof object.axes[i] !== "object")
+                            throw TypeError(".lumber.DataTable.UserData.axes: object expected");
+                        message.axes[i] = $root.lumber.DataTable.UserAxe.fromObject(object.axes[i]);
+                    }
+                }
+                if (object.coin != null)
+                    message.coin = object.coin | 0;
+                if (object.rose != null)
+                    message.rose = object.rose | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a UserData message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {lumber.DataTable.UserData} message UserData
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            UserData.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.axes = [];
+                if (options.defaults) {
+                    object.tree = null;
+                    object.coin = 0;
+                    object.rose = 0;
+                }
+                if (message.tree != null && message.hasOwnProperty("tree"))
+                    object.tree = $root.lumber.DataTable.UserTree.toObject(message.tree, options);
+                if (message.axes && message.axes.length) {
+                    object.axes = [];
+                    for (var j = 0; j < message.axes.length; ++j)
+                        object.axes[j] = $root.lumber.DataTable.UserAxe.toObject(message.axes[j], options);
+                }
+                if (message.coin != null && message.hasOwnProperty("coin"))
+                    object.coin = message.coin;
+                if (message.rose != null && message.hasOwnProperty("rose"))
+                    object.rose = message.rose;
+                return object;
+            };
+
+            /**
+             * Converts this UserData to JSON.
+             * @function toJSON
+             * @memberof lumber.DataTable.UserData
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            UserData.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for UserData
+             * @function getTypeUrl
+             * @memberof lumber.DataTable.UserData
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            UserData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/lumber.DataTable.UserData";
+            };
+
+            return UserData;
+        })();
+
         DataTable.UserTree = (function() {
 
             /**
@@ -638,6 +938,7 @@ $root.lumber = (function() {
          * @property {number} AxeBurnish=3 AxeBurnish value
          * @property {number} AxeUpgrade=4 AxeUpgrade value
          * @property {number} DoLumber=5 DoLumber value
+         * @property {number} GetRewardRecord=6 GetRewardRecord value
          */
         Enum.EMessageType = (function() {
             var valuesById = {}, values = Object.create(valuesById);
@@ -647,6 +948,7 @@ $root.lumber = (function() {
             values[valuesById[3] = "AxeBurnish"] = 3;
             values[valuesById[4] = "AxeUpgrade"] = 4;
             values[valuesById[5] = "DoLumber"] = 5;
+            values[valuesById[6] = "GetRewardRecord"] = 6;
             return values;
         })();
 
@@ -3660,7 +3962,7 @@ $root.lumber = (function() {
              * @interface IConfig
              * @property {number|null} [Id] Config Id
              * @property {string|null} [Format] Config Format
-             * @property {lumber.Spec.eConfigKey|null} [Key] Config Key
+             * @property {lumber.Spec.EConfigKey|null} [Key] Config Key
              * @property {string|null} [Value] Config Value
              * @property {string|null} [Desc] Config Desc
              */
@@ -3698,7 +4000,7 @@ $root.lumber = (function() {
 
             /**
              * Config Key.
-             * @member {lumber.Spec.eConfigKey} Key
+             * @member {lumber.Spec.EConfigKey} Key
              * @memberof lumber.Spec.Config
              * @instance
              */
@@ -3990,7 +4292,7 @@ $root.lumber = (function() {
                 if (message.Format != null && message.hasOwnProperty("Format"))
                     object.Format = message.Format;
                 if (message.Key != null && message.hasOwnProperty("Key"))
-                    object.Key = options.enums === String ? $root.lumber.Spec.eConfigKey[message.Key] === undefined ? message.Key : $root.lumber.Spec.eConfigKey[message.Key] : message.Key;
+                    object.Key = options.enums === String ? $root.lumber.Spec.EConfigKey[message.Key] === undefined ? message.Key : $root.lumber.Spec.EConfigKey[message.Key] : message.Key;
                 if (message.Value != null && message.hasOwnProperty("Value"))
                     object.Value = message.Value;
                 if (message.Desc != null && message.hasOwnProperty("Desc"))
@@ -4028,8 +4330,8 @@ $root.lumber = (function() {
         })();
 
         /**
-         * eConfigKey enum.
-         * @name lumber.Spec.eConfigKey
+         * EConfigKey enum.
+         * @name lumber.Spec.EConfigKey
          * @enum {number}
          * @property {number} Default=0 Default value
          * @property {number} Bacepool_On=1 Bacepool_On value
@@ -4046,7 +4348,7 @@ $root.lumber = (function() {
          * @property {number} Cost_Silver_Axe=12 Cost_Silver_Axe value
          * @property {number} Cost_Gold_Axe=13 Cost_Gold_Axe value
          */
-        Spec.eConfigKey = (function() {
+        Spec.EConfigKey = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "Default"] = 0;
             values[valuesById[1] = "Bacepool_On"] = 1;

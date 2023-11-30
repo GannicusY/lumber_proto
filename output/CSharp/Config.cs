@@ -26,8 +26,8 @@ namespace Lumber.Spec {
           string.Concat(
             "Chdwcm90by9TcGVjL0NvbmZpZy5wcm90bxILbHVtYmVyLlNwZWMiZwoGQ29u",
             "ZmlnEgoKAklkGAEgASgFEg4KBkZvcm1hdBgCIAEoCRIkCgNLZXkYAyABKA4y",
-            "Fy5sdW1iZXIuU3BlYy5lQ29uZmlnS2V5Eg0KBVZhbHVlGAQgASgJEgwKBERl",
-            "c2MYBSABKAkqjwIKCmVDb25maWdLZXkSCwoHRGVmYXVsdBAAEg8KC0JhY2Vw",
+            "Fy5sdW1iZXIuU3BlYy5FQ29uZmlnS2V5Eg0KBVZhbHVlGAQgASgJEgwKBERl",
+            "c2MYBSABKAkqjwIKCkVDb25maWdLZXkSCwoHRGVmYXVsdBAAEg8KC0JhY2Vw",
             "b29sX09uEAESEAoMQmFjZXBvb2xfT2ZmEAISFAoQTWlkZGxlcG9vcl9MaW1p",
             "dBADEhQKEFNlbmlvcnBvb3JfTGltaXQQBBIOCgpQcm9wb3J0aW9uEAUSDQoJ",
             "QnJva2VyYWdlEAYSEAoMSW5pdGlhbF9Hb2xkEAcSEQoNQ29pbl9Jcm9uX0F4",
@@ -36,7 +36,7 @@ namespace Lumber.Spec {
             "dF9Hb2xkX0F4ZRANYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Lumber.Spec.eConfigKey), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Lumber.Spec.EConfigKey), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Lumber.Spec.Config), global::Lumber.Spec.Config.Parser, new[]{ "Id", "Format", "Key", "Value", "Desc" }, null, null, null, null)
           }));
     }
@@ -47,7 +47,7 @@ namespace Lumber.Spec {
   /// <summary>
   /// 字段名称
   /// </summary>
-  public enum eConfigKey {
+  public enum EConfigKey {
     /// <summary>
     /// 默认值
     /// </summary>
@@ -151,13 +151,13 @@ namespace Lumber.Spec {
 
     /// <summary>Field number for the "Key" field.</summary>
     public const int KeyFieldNumber = 3;
-    private global::Lumber.Spec.eConfigKey key_ = global::Lumber.Spec.eConfigKey.Default;
+    private global::Lumber.Spec.EConfigKey key_ = global::Lumber.Spec.EConfigKey.Default;
     /// <summary>
     /// 字段名称
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Lumber.Spec.eConfigKey Key {
+    public global::Lumber.Spec.EConfigKey Key {
       get { return key_; }
       set {
         key_ = value;
@@ -223,7 +223,7 @@ namespace Lumber.Spec {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Format.Length != 0) hash ^= Format.GetHashCode();
-      if (Key != global::Lumber.Spec.eConfigKey.Default) hash ^= Key.GetHashCode();
+      if (Key != global::Lumber.Spec.EConfigKey.Default) hash ^= Key.GetHashCode();
       if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (Desc.Length != 0) hash ^= Desc.GetHashCode();
       if (_unknownFields != null) {
@@ -252,7 +252,7 @@ namespace Lumber.Spec {
         output.WriteRawTag(18);
         output.WriteString(Format);
       }
-      if (Key != global::Lumber.Spec.eConfigKey.Default) {
+      if (Key != global::Lumber.Spec.EConfigKey.Default) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Key);
       }
@@ -282,7 +282,7 @@ namespace Lumber.Spec {
         output.WriteRawTag(18);
         output.WriteString(Format);
       }
-      if (Key != global::Lumber.Spec.eConfigKey.Default) {
+      if (Key != global::Lumber.Spec.EConfigKey.Default) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Key);
       }
@@ -310,7 +310,7 @@ namespace Lumber.Spec {
       if (Format.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Format);
       }
-      if (Key != global::Lumber.Spec.eConfigKey.Default) {
+      if (Key != global::Lumber.Spec.EConfigKey.Default) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Key);
       }
       if (Value.Length != 0) {
@@ -337,7 +337,7 @@ namespace Lumber.Spec {
       if (other.Format.Length != 0) {
         Format = other.Format;
       }
-      if (other.Key != global::Lumber.Spec.eConfigKey.Default) {
+      if (other.Key != global::Lumber.Spec.EConfigKey.Default) {
         Key = other.Key;
       }
       if (other.Value.Length != 0) {
@@ -370,7 +370,7 @@ namespace Lumber.Spec {
             break;
           }
           case 24: {
-            Key = (global::Lumber.Spec.eConfigKey) input.ReadEnum();
+            Key = (global::Lumber.Spec.EConfigKey) input.ReadEnum();
             break;
           }
           case 34: {
@@ -405,7 +405,7 @@ namespace Lumber.Spec {
             break;
           }
           case 24: {
-            Key = (global::Lumber.Spec.eConfigKey) input.ReadEnum();
+            Key = (global::Lumber.Spec.EConfigKey) input.ReadEnum();
             break;
           }
           case 34: {
